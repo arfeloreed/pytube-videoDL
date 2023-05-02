@@ -2,7 +2,7 @@ from pytube import YouTube
 
 
 # Youtube video url
-link = "https://www.youtube.com/watch?v=sWbUDq4S6Y8"
+link = "https://www.youtube.com/watch?v=duC7TZ1UlsQ"
 
 # creating Youtube object with url
 yt = YouTube(
@@ -13,19 +13,21 @@ yt = YouTube(
 )
 
 # getting all the available streamss
-streams = yt.streams.filter(progressive=True)
+streams = yt.title
+print(streams)
 
 # printing the available streamss
-stream_list = []
-for i in range(len(streams)):
-    # print(streams[i].resolution)
-    if streams[i].resolution == '720p':
-        # print(streams[i])
-        stream_list.append(streams[i])
+# stream_list = []
+# for i in range(len(streams)):
+#     # print(streams[i].resolution)
+#     if streams[i].resolution == '720p':
+#         print(streams[i])
+#         print(f"{streams[i].title} \n")
+#         stream_list.append(streams[i])
 
 # print(stream_list)
 # download the first stream from the list
-stream_list[0].download("/home/reed/Downloads/")
+# stream_list[0].download("/home/reed/Downloads/")
 
 # print the title of video and views to check if it's correct
 # print("Title: ", yt.title)
